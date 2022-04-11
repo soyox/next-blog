@@ -1,0 +1,6 @@
+/* @import url("./normalize.css"); */
+@import url("antd/dist/antd.css");
+
+body {
+  background-color: aliceblue;
+}
