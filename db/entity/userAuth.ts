@@ -1,7 +1,7 @@
 import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { User } from './user';
 
-@Entity({name: 'user_auth'})
+@Entity({name: 'user_auths'})
 export class UserAuth extends BaseEntity{
   @PrimaryGeneratedColumn()
   readonly id!: number

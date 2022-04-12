@@ -18,11 +18,11 @@ const Login: NextPage<LoginProps> = (props) => {
   const [isShowVerifyCode, setIsShowVerifyCode] = useState(false);
 
   const handleClose = () => {
-    onClose && onClose();
     setForm({
       phone: '',
       verify: '',
     });
+    onClose && onClose();
   };
 
   const handleGetVerifyCode = () => {
@@ -54,6 +54,7 @@ const Login: NextPage<LoginProps> = (props) => {
     request
       .post('/api/user/login', {
         ...form,
+        identity_type: 'phone',
       })
       .then((res: any) => {
         if (res?.code === 0) {

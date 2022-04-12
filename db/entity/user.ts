@@ -2,7 +2,7 @@ import {Entity, BaseEntity, PrimaryGeneratedColumn, Column} from 'typeorm'
 
 @Entity({ name: 'users'})
 
-export class User extends BaseEntity{
+export class User extends BaseEntity{ 
   @PrimaryGeneratedColumn()
   readonly id!: number;
 
@@ -10,12 +10,12 @@ export class User extends BaseEntity{
   nickname!: string;
 
   @Column()
-  avator!: string;
+  avatar!: string;
 
   @Column()
   job!: string;
 
   @Column()
-  introduce!: string;
+  introduce?: string;
   
 }

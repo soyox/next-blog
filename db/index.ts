@@ -1,6 +1,7 @@
-import { User, UserAuth } from './entity';
 import 'reflect-metadata';
-import { Connection, getConnection, DataSource } from 'typeorm';
+import { Connection, getConnection, createConnection } from 'typeorm';
+import {} from 'typeorm';
+import { User, UserAuth } from './entity';
 
 let connectionReadyPromise: Promise<Connection> | null = null;
 // const type = process.env.DATABASE_TYPE;
@@ -20,7 +21,7 @@ export const prepareConnection = () => {
         console.log(error);
       }
 
-      const connection = new DataSource({
+      const connection = createConnection({
         type: 'mysql',
         host,
         port,
