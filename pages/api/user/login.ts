@@ -4,6 +4,8 @@ import { withIronSessionApiRoute } from 'iron-session/next';
 import { ironOptions } from 'config';
 import { ISession } from 'pages/api/index';
 import { User, UserAuth } from 'db/entity';
+import { Cookie } from 'next-cookie';
+import { setCookie } from 'utils';
 
 export default withIronSessionApiRoute(login, ironOptions);
 
@@ -14,8 +16,9 @@ async function login(req: NextApiRequest, res: NextApiResponse) {
   // const userRepo = db.getRepository(User);
   const db = await prepareConnection();
 
-  // const userRepo = db.getRepository(User);
   const userAuthRepo = db.getRepository(UserAuth);
+
+  const cookies = Cookie.fromApiRoute(req, res);
 
   if (String(session.verifyCode) === String(verify)) {
     // 验证码正确 在user_auths表查找
@@ -36,8 +39,10 @@ async function login(req: NextApiRequest, res: NextApiResponse) {
       session.userId = id;
       session.nickname = nickname;
       session.avatar = avatar;
-
+      userAuthRepo.update(userAuth.id, { credential: session.verifyCode });
       await session.save();
+
+      setCookie(cookies, { userId: id, nickname, avatar });
 
       res?.status(200).json({
         code: 0,
@@ -72,6 +77,8 @@ async function login(req: NextApiRequest, res: NextApiResponse) {
       session.avatar = avatar;
 
       await session.save();
+
+      setCookie(cookies, { userId: id, nickname, avatar });
 
       res?.status(200).json({
         code: 0,

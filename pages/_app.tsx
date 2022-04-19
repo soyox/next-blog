@@ -3,11 +3,18 @@ import type { AppProps } from 'next/app';
 import Layout from 'components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  const renderLayout = () => {
+    if ((Component as any).layout === null) {
+      return <Component {...pageProps}></Component>;
+    } else {
+      return (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      );
+    }
+  };
+  return <>{renderLayout()}</>;
 }
 
 export default MyApp;
