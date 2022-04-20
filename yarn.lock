@@ -2168,6 +2168,11 @@
   "resolved" "https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.10.tgz"
   "version" "4.2.10"
 
+"hamt_plus@1.0.2":
+  "integrity" "sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA=="
+  "resolved" "https://registry.npmmirror.com/hamt_plus/-/hamt_plus-1.0.2.tgz"
+  "version" "1.0.2"
+
 "hard-rejection@^2.1.0":
   "integrity" "sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA=="
   "resolved" "https://registry.npmmirror.com/hard-rejection/-/hard-rejection-2.1.0.tgz"
@@ -2889,6 +2894,11 @@
   "integrity" "sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA=="
   "resolved" "https://registry.npmmirror.com/markdown-table/-/markdown-table-3.0.2.tgz"
   "version" "3.0.2"
+
+"markdown-to-jsx@^7.1.7":
+  "integrity" "sha512-VI3TyyHlGkO8uFle0IOibzpO1c1iJDcXcS/zBrQrXQQvJ2tpdwVzVZ7XdKsyRz1NdRmre4dqQkMZzUHaKIG/1w=="
+  "resolved" "https://registry.npmmirror.com/markdown-to-jsx/-/markdown-to-jsx-7.1.7.tgz"
+  "version" "7.1.7"
 
 "markdown-to-txt@^2.0.0":
   "integrity" "sha512-H5DSAY6frUQ6/CR0nJMlGCEuSA3pvi14dYfICJPKLAvd/rDk6eb+cj84zU5XTNYzECyCcujoAL1PHhjmOgeqUw=="
@@ -4250,7 +4260,7 @@
     "unist-util-visit" "^4.0.0"
     "vfile" "^5.0.0"
 
-"react@*", "react@^17.0.2 || ^18.0.0-0", "react@^18.0.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.8.0", "react@>=16.9.0":
+"react@*", "react@^17.0.2 || ^18.0.0-0", "react@^18.0.0", "react@>= 0.14.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.13.1", "react@>=16.8.0", "react@>=16.9.0":
   "integrity" "sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A=="
   "resolved" "https://registry.npmmirror.com/react/-/react-18.0.0.tgz"
   "version" "18.0.0"
@@ -4282,6 +4292,13 @@
   "version" "3.6.0"
   dependencies:
     "picomatch" "^2.2.1"
+
+"recoil@^0.7.2":
+  "integrity" "sha512-OT4pI7FOUHcIoRtjsL5Lqq+lFFzQfir4MIbUkqyJ3nqv3WfBP1pHepyurqTsK5gw+T+I2R8+uOD28yH+Lg5o4g=="
+  "resolved" "https://registry.npmmirror.com/recoil/-/recoil-0.7.2.tgz"
+  "version" "0.7.2"
+  dependencies:
+    "hamt_plus" "1.0.2"
 
 "redent@^3.0.0":
   "integrity" "sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg=="
