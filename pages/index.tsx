@@ -8,7 +8,9 @@ import { Divider } from 'antd';
 export async function getServerSideProps() {
   const db = await prepareConnection();
   const articleRepo = db.getRepository(Article);
-  const articles = await articleRepo.find({ relations: ['user'] });
+  const articles = await articleRepo.find({ relations: ['user'], order: {
+    update_time: 'DESC'
+  } });
 
   return {
     props: {
@@ -23,14 +25,14 @@ export interface HomeProps {
 
 const Home = (props: HomeProps) => {
   const { articles } = props;
-  console.log('home', props.articles);
+  console.log('home', articles);
   return (
     <div className="content-layout">
       {articles.map((article) => (
-        <>
-          <ListItem key={article.id} article={article}></ListItem>
+        <div key={article.id}>
+          <ListItem article={article}></ListItem>
           <Divider></Divider>
-        </>
+        </div>
       ))}
     </div>
   );

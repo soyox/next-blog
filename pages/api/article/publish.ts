@@ -32,12 +32,17 @@ async function publish(req: NextApiRequest, res: NextApiResponse) {
     article.views = 0;
     article.user = user;
     console.log(article);
-  }
-  const articleRes = await articleRepo.save(article);
+    const articleRes = await articleRepo.save(article);
 
-  res.status(200).json({
-    code: 0,
-    msg: 'success',
-    data: articleRes,
-  });
+    res.status(200).json({
+      code: 0,
+      msg: 'success',
+      data: articleRes,
+    });
+  } else {
+    res.status(200).json({
+      code: 1,
+      msg: '发布失败',
+    });
+  }
 }

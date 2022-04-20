@@ -7,12 +7,15 @@ import styles from './index.module.scss';
 import { Button, Input, message } from 'antd';
 import request from 'service/fetch'
 
+
 const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false });
 
 const NewEditor: NextPage = () => {
   const [content, setContent] = useState('**Hello world!!!**');
   const [title, setTitle] = useState('');
+
   async function handlePublic() {
+    
     const res: any = await request.post('/api/article/publish', {
       title,
       content

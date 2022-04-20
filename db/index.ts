@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { Connection, getConnection, createConnection } from 'typeorm';
 import {} from 'typeorm';
-import { User, UserAuth, Article } from './entity';
+import { User, UserAuth, Article, Comment } from './entity';
 
 let connectionReadyPromise: Promise<Connection> | null = null;
 // const type = process.env.DATABASE_TYPE;
@@ -28,7 +28,7 @@ export const prepareConnection = () => {
         username,
         password,
         database,
-        entities: [User, UserAuth, Article],
+        entities: [User, UserAuth, Article, Comment],
         synchronize: false,
         logging: true,
       });

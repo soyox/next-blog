@@ -13,11 +13,12 @@ export interface ListItemProps {
 const ListItem: NextPage<ListItemProps> = (props) => {
   const { article } = props;
   return (
+    // eslint-disable-next-line @next/next/link-passhref
     <Link href={`/article/${article.id}`}>
       <div className={styles.container}>
         <div className={styles.article}>
           <div className={styles.userInfo}>
-            <span className={styles.name}>{article.user.nickname}</span>
+            <span className={styles.name}>{article.user?.nickname}</span>
             <span className={styles.date}>
               {formatDistanceToNow(new Date(article.update_time))}
             </span>
@@ -29,7 +30,7 @@ const ListItem: NextPage<ListItemProps> = (props) => {
             <span>{article.views}</span>
           </div>
         </div>
-        <Avatar src={article.user.avatar}></Avatar>
+        <Avatar src={article.user?.avatar}></Avatar>
       </div>
     </Link>
   );
