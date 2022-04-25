@@ -21,7 +21,7 @@ export const prepareConnection = () => {
         console.log(error);
       }
 
-      const connection = createConnection({
+      return createConnection({
         type: 'mysql',
         host,
         port,
@@ -32,8 +32,6 @@ export const prepareConnection = () => {
         synchronize: false,
         logging: true,
       });
-
-      return connection;
     })();
   }
   return connectionReadyPromise;
